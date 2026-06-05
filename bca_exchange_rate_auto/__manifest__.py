@@ -3,7 +3,7 @@
     "version": "16.0.1.0.0",
     "category": "Accounting/Accounting",
     "summary": "Automatically update currency rates from BCA kurs page",
-    "author": "Custom",
+    "author": "Abdurrachman Basurroh",
     "license": "LGPL-3",
     "depends": ["account"],
     "data": [
