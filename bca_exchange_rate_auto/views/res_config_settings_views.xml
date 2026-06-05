@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_bca_exchange_rate" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.bca.exchange.rate</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="BCA Exchange Rate" string="BCA Exchange Rate">
+                    <h2>BCA Exchange Rate</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="bca_exchange_rate_enabled"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="bca_exchange_rate_enabled"/>
+                                <div class="text-muted">
+                                    Update Odoo currency rates automatically from the public BCA kurs page.
+                                </div>
+                                <div class="content-group" attrs="{'invisible': [('bca_exchange_rate_enabled', '=', False)]}">
+                                    <div class="row mt16">
+                                        <label for="bca_exchange_rate_type" class="col-lg-4 o_light_label"/>
+                                        <field name="bca_exchange_rate_type" class="oe_inline"/>
+                                    </div>
+                                    <div class="row">
+                                        <label for="bca_exchange_rate_value" class="col-lg-4 o_light_label"/>
+                                        <field name="bca_exchange_rate_value" class="oe_inline"/>
+                                    </div>
+                                    <div class="row">
+                                        <label for="bca_exchange_rate_currency_ids" class="col-lg-4 o_light_label"/>
+                                        <field name="bca_exchange_rate_currency_ids" widget="many2many_tags"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <button name="action_update_bca_exchange_rates" type="object" string="Update Now" class="btn-primary"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Last Update</span>
+                                <div class="text-muted">
+                                    <field name="bca_exchange_rate_last_update" readonly="1"/>
+                                </div>
+                                <div class="text-muted">
+                                    <field name="bca_exchange_rate_last_message" readonly="1"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
